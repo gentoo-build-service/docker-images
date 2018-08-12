@@ -14,6 +14,7 @@ mkdir -p /etc/portage/package.keywords
 echo "app-misc/gentoo-buildkit ~${ARCH}" > /etc/portage/package.keywords/99-buildservice.keywords
 echo 'dev-libs/openssl -bindist' > /etc/portage/package.use/99-buildservice.use
 echo "dev-libs/openssl -~${ARCH}" >> /etc/portage/package.keywords/99-buildservice.keywords
+echo 'dev-python/shyaml ~amd64' >> /etc/portage/package.keywords/99-buildservice.keywords
 emaint sync -r gentoo-build-service
 emerge --quiet -j2 net-misc/openssh app-misc/gentoo-buildkit
 rm -rf /setup.sh
